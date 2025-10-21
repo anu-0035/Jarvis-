@@ -106,17 +106,5 @@ User Question → Retriever → ChromaDB → LangChain → OpenAI → Final Answ
 
 ---
 
-If you want, I can also add:
-
-✅ Screenshots section
-✅ Demo GIF
-✅ Folder structure
-✅ Future enhancements
-
-Would you like me to add these too?
-
-
-
-User Question → Retriever → ChromaDB → LangChain → OpenAI → Final Answer
 
 
