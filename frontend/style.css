@@ -1,0 +1,94 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #6ee7b7;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #071021 0%, #081827 100%);
+  color: #e6eef8;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.chat {
+  min-height: 300px;
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: auto;
+}
+
+.msg {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.msg.user {
+  background: rgba(110, 231, 183, 0.12);
+  align-self: flex-end;
+}
+
+.msg.assistant {
+  background: rgba(148, 163, 184, 0.06);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: inherit;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 0;
+  background: var(--accent);
+  color: #042522;
+  cursor: pointer;
+}
+
+button#clearBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}

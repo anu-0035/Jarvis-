@@ -1,0 +1,28 @@
+# Jarvis RAG - FastAPI + LangChain + Chroma + Simple Frontend
+
+
+Small demo project showing Retrieval-Augmented Generation using LangChain.
+
+
+## Features
+- FastAPI backend exposing `/chat` endpoint
+- LangChain RAG pipeline using OpenAI embeddings + ChatOpenAI for answer generation
+- Chroma vectorstore persisted locally
+- Simple HTML/CSS frontend to ask questions
+
+
+## Setup (local)
+
+
+1. Clone repository (or copy files into a folder)
+
+
+2. Create a Python virtual environment and install dependencies
+
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate # mac/linux
+venv\Scripts\activate # windows
+pip install -r requirements.txt

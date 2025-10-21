@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <body>
+
+    <div class="controls">
+      <textarea 
+        id="input" 
+        placeholder="Ask something..." 
+        rows="2">
+      </textarea>
+
+      <div class="actions">
+        <button id="sendBtn">Send</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+    </div>
+    </main>
+
+    <footer>
+      <small>Backend: http://127.0.0.1:8000</small>
+    </footer>
+  </div>
+
+  <script>
+    const apiUrl = "http://127.0.0.1:8000";
+
+    function appendMessage(role, text) {
+      const chat = document.getElementById('chat');
+      const div = document.createElement('div');
+      div.className = 'msg ' + role;
+      div.innerText = text;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function sendQuery(query) {
+      appendMessage('user', query);
+      appendMessage('assistant', '... thinking');
+
+      try {
+        const res = await fetch(`${apiUrl}/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query })
+        });
+
+        const data = await res.json();
+
+        // remove the '... thinking' placeholder
+        const placeholders = document.querySelectorAll('.assistant');
+        if (placeholders.length) {
+          placeholders[placeholders.length - 1].remove();
+        }
+
+        appendMessage('assistant', data.response || 'No answer');
+      } catch (err) {
+        console.error(err);
+        appendMessage('assistant', 'Error contacting backend');
+      }
+    }
+
+    document.getElementById('sendBtn').addEventListener('click', () => {
+      const q = document.getElementById('input').value.trim();
+      if (!q) return;
+      sendQuery(q);
+      document.getElementById('input').value = '';
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      document.getElementById('chat').innerHTML = '';
+    });
+
+    // allow Enter to send
+    document.getElementById('input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        document.getElementById('sendBtn').click();
+      }
+    });
+  </script>
+
+  </body>
+</html>
