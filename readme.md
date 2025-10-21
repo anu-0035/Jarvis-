@@ -27,48 +27,6 @@ source venv/bin/activate # mac/linux
 venv\Scripts\activate # windows
 pip install -r requirements.txt
 
-
-
-
-
-
-
-Great — here is your **complete README** with steps 1–7 formatted cleanly and professionally. You can copy-paste directly into your `README.md`:
-
----
-
-````md
-# Jarvis RAG - FastAPI + LangChain + Chroma + Simple Frontend
-
-Small demo project showing Retrieval-Augmented Generation (RAG) using LangChain, FastAPI, Chroma, and OpenAI.
-
----
-
-## 🚀 Features
-- FastAPI backend exposing `/chat` endpoint
-- LangChain RAG pipeline using **OpenAI Embeddings + ChatOpenAI**
-- **ChromaDB** vector store with local persistence
-- Simple **HTML/CSS frontend** for querying your documents
-- Supports **PDF / TXT knowledge files**
-
----
-
-## 🛠️ Setup (Local)
-
-### **1. Clone the repository**
-```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
-````
-
-### **2. Create a Python virtual environment and install dependencies**
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate   # mac/linux
-venv\Scripts\activate      # windows
-pip install -r requirements.txt
 ```
 
 ### **3. Create `.env`**
